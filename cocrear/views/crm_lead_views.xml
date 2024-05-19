@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_form_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='lead']" position="after">
+                <page string="Historial WhatsApp" name="whatsapp_tab">
+                    <field name="whatsapp_history" widget="one2many_list" nolabel="1">
+                        <tree>
+                            <field name="create_date"/>
+                            <field name="create_uid"/>
+                            <field name="mobile_number"/>
+                            <field name="body"  widget="html" class="small-html-widget"/>
+                            <field name="state"/>
+                            <field name="message_type"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
